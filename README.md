@@ -1,7 +1,3 @@
-Aqui está o texto reorganizado de forma lógica para uma melhor compreensão do Modelo TCP/IP e seus componentes:
-
----
-
 # **Redes de Computadores**  
 ## **Modelo TCP/IP**
 
@@ -99,3 +95,58 @@ Além dos protocolos TCP e IP, o modelo TCP/IP envolve outros protocolos importa
 - **UDP**: Transferência de dados sem garantia de entrega, ideal para streaming em tempo real.
 
 Assim, o modelo TCP/IP envolve uma série de protocolos que garantem a entrega de dados, segurança e comunicação de diferentes tipos de serviços na rede. Cada um desses protocolos tem um papel crucial no processo de envio e recebimento de dados pela Internet, oferecendo funcionalidades específicas dependendo da aplicação.
+
+
+## FTP
+
+O **FTP (File Transfer Protocol)**, em português "Protocolo de Transferência de Arquivos", é um protocolo de rede amplamente utilizado para a transferência de arquivos entre computadores através de uma rede TCP/IP, como a Internet. Surgido em 1971, é um dos meios mais antigos de transferir dados entre computadores. Sua principal função é permitir que desenvolvedores de sites e usuários realizem upload e download de arquivos de maneira conveniente e segura, especialmente quando há a necessidade de transferir grandes volumes de dados. O FTP utiliza o modelo cliente/servidor, onde o cliente solicita o acesso aos dados e o servidor os armazena.
+
+### Como Funciona o FTP?
+
+O **FTP** funciona estabelecendo duas conexões para comunicação entre os computadores. A primeira é chamada de **canal de comando**, responsável pelo envio de instruções e respostas entre o cliente e o servidor. A segunda é o **canal de dados**, usado para a transferência de arquivos. Para acessar o servidor FTP, os usuários precisam fornecer credenciais de autenticação, embora alguns servidores públicos permitam acesso sem a necessidade dessas credenciais, em um modo chamado de **FTP anônimo**.
+
+Existem dois modos principais de conexão no FTP: o **modo ativo** e o **modo passivo**. No modo ativo, o cliente solicita a criação de uma conexão e o servidor a estabelece, o que pode ser bloqueado por firewalls. No modo passivo, o cliente estabelece tanto o canal de comando quanto o de dados, com o servidor apenas ouvindo as conexões. O modo passivo é mais utilizado quando há bloqueios de firewall que impedem a conexão ativa.
+
+### Tipos de FTP
+
+Existem três variações principais do FTP:
+
+- **FTP Simples**: É o FTP tradicional, sem criptografia, e utiliza a porta 21.
+- **FTPS**: FTP seguro, que utiliza criptografia SSL/TLS para proteger a transferência de dados.
+- **FTPES**: Similar ao FTPS, mas com a criptografia sendo explicitamente ativada no momento da comunicação.
+
+### Vantagens do FTP
+
+O FTP permite a transferência simultânea de múltiplos arquivos, o que facilita e acelera o processo, especialmente quando há grandes quantidades de dados a serem transferidos. Além disso, ele é muito útil para empresas e indivíduos que precisam enviar grandes arquivos, como centenas de gigabytes, de forma eficiente.
+
+### Desafios de Segurança do FTP
+
+Um dos principais desafios do FTP é sua **falta de segurança**. O FTP tradicional não criptografa os dados durante a transferência, o que o torna vulnerável a ataques, como **sniffing** (interceptação de dados), **força bruta** e **falsificação**. Como o FTP transmite senhas em texto simples, sem criptografia, elas podem ser facilmente descobertas por criminosos. Embora o **FTPS** e o **FTPES** ofereçam segurança adicional com criptografia, o FTP ainda é considerado vulnerável e inadequado para transferir dados sensíveis sem proteção adicional.
+
+### FTP vs. SFTP
+
+O **SFTP** (Protocolo de Transferência de Arquivos Secure Shell) oferece uma camada de segurança adicional, utilizando criptografia para proteger a transferência de dados. Além disso, o SFTP usa apenas um único canal para a transferência de dados, ao contrário do FTP, que usa dois canais. O SFTP é mais seguro, pois as transferências são feitas de forma criptografada, enquanto o FTP tradicional transmite dados sem criptografia.
+
+### FTP vs. HTTP
+
+Embora o FTP e o **HTTP** (Protocolo de Transferência de Hipertexto) sejam protocolos de camada de aplicação usados para transferência de dados, o HTTP é mais eficiente em muitos casos devido à sua capacidade de suportar múltiplas sessões simultâneas e não exigir autenticação de cliente. O FTP, por outro lado, exige autenticação e é mais limitado no número de sessões que pode suportar.
+
+### FTP vs. MFT
+
+A **Transferência de Arquivos Gerenciada** (MFT) surgiu como uma alternativa ao FTP, trazendo maior segurança e conformidade com regulamentos. O FTP, apesar de ser eficaz, não foi projetado para lidar com as ameaças cibernéticas modernas, tornando-o vulnerável a ataques. O MFT, por sua vez, oferece funcionalidades de gerenciamento de transferências, criptografia de ponta a ponta e recursos de segurança adicionais, sendo recomendado para ambientes corporativos que lidam com dados sensíveis.
+
+### Como Usar o FTP
+
+O FTP pode ser utilizado de diferentes maneiras:
+
+1. **Por meio de um navegador web**: Não é necessário instalar software adicional para acessar servidores FTP em navegadores modernos.
+2. **Cliente FTP com interface gráfica**: Aplicações de terceiros com interface gráfica tornam a experiência de uso mais amigável.
+3. **Linha de comando FTP**: Todos os principais sistemas operacionais oferecem clientes FTP de linha de comando para usuários avançados.
+
+### Como Alterar Portas do FTP
+
+Por padrão, o FTP utiliza a porta 21. No entanto, é possível configurar outras portas, seja diretamente nas configurações do servidor ou ao modificar o endereço de acesso no formato `ftp://meudominio.com:porta/`.
+
+### Conclusão
+
+O **FTP** é uma ferramenta fundamental para transferência de arquivos, especialmente quando se trata de grandes volumes de dados. No entanto, devido à sua falta de segurança, alternativas como **SFTP** e **MFT** oferecem soluções mais seguras para ambientes corporativos e para a transferência de dados sensíveis. Ao ser usado corretamente e com as devidas precauções de segurança, o FTP continua sendo uma opção eficaz para muitas operações de rede.
