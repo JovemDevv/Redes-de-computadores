@@ -150,3 +150,85 @@ Por padrão, o FTP utiliza a porta 21. No entanto, é possível configurar outra
 ### Conclusão
 
 O **FTP** é uma ferramenta fundamental para transferência de arquivos, especialmente quando se trata de grandes volumes de dados. No entanto, devido à sua falta de segurança, alternativas como **SFTP** e **MFT** oferecem soluções mais seguras para ambientes corporativos e para a transferência de dados sensíveis. Ao ser usado corretamente e com as devidas precauções de segurança, o FTP continua sendo uma opção eficaz para muitas operações de rede.
+
+## SSH
+
+SSH (Secure Shell) é um protocolo de segurança para troca de arquivos e acesso remoto entre cliente e servidor, utilizando criptografia para garantir a proteção dos dados. Criado em 1995 por Tatu Ylonen, ele é essencial para administrar servidores remotamente e proteger informações contra acesso não autorizado.
+
+---
+
+**Principais funcionalidades do SSH:**
+
+1. **Conexões remotas seguras:** Protege dados transmitidos contra interceptação e permite o gerenciamento remoto de servidores.
+2. **Transferência de arquivos segura:** Facilita a movimentação de dados com ferramentas como SCP e SFTP.
+3. **Execução de comandos remotos:** Permite operar servidores remotamente como se estivessem locais.
+4. **Tunelamento seguro:** Protege tráfego de dados, ideal para conexões em redes públicas.
+
+---
+
+**Como funciona o SSH?**
+
+O SSH autentica o usuário e estabelece uma conexão segura utilizando:
+
+- **Criptografia de chave pública e privada:** Autenticação por pares de chaves que garantem a segurança da comunicação.
+- **Criptografia simétrica:** Usa uma chave compartilhada para criptografar e descriptografar os dados transmitidos.
+- **Hashing:** Garante a integridade das mensagens, protegendo-as contra alterações.
+
+Após a autenticação, o usuário pode executar comandos no servidor remoto como se estivesse localmente conectado.
+
+---
+
+**Como acessar o SSH?**
+
+1. Escolha um cliente SSH, como PuTTY ou OpenSSH.
+2. Obtenha os dados do servidor: IP, login, senha ou chave privada.
+3. Conecte-se via terminal ou ferramenta gráfica, seguindo as boas práticas de segurança.
+
+---
+
+**Casos de uso comuns:**
+
+- Gerenciamento de servidores e infraestrutura.
+- Transferência de arquivos seguros.
+- Acesso remoto a redes privadas.
+- Ignorar restrições de firewall.
+
+---
+
+**Riscos associados ao SSH e como mitigá-los:**
+
+Embora o SSH seja seguro, algumas práticas são essenciais para evitar vulnerabilidades:
+
+- **Ataques de força bruta:** Use senhas fortes ou autenticação por chave pública.
+- **Chaves comprometidas:** Proteja as chaves privadas com senhas e autenticação multifator.
+- **Configuração inadequada:** Desative o acesso root e limite conexões a IPs confiáveis.
+- **Alteração da porta padrão:** Mudar a porta padrão (22) reduz a exposição a ataques automatizados.
+
+---
+
+**Comparação com outros protocolos:**
+
+- **VPNs:** Protegem todo o tráfego da rede, enquanto o SSH é mais focado em gerenciamento remoto e tunelamento de portas específicas.
+- **SSL/TLS:** Protege transações web; o SSH é projetado para acessos remotos e transferência de arquivos.
+
+---
+
+**Ferramentas úteis para SSH:**
+
+- **PuTTY:** Cliente SSH versátil para Windows, Unix e Linux.
+- **OpenSSH:** Solução robusta e amplamente utilizada para conexões seguras.
+- **SmarTTY:** Oferece múltiplas conexões simultâneas e edição de arquivos diretamente.
+
+---
+
+**Como o Cloudflare Zero Trust melhora o uso do SSH?**
+
+Com o Cloudflare Zero Trust, você pode usar o SSH sem expor portas na internet. Ele conecta servidores à rede Cloudflare, tornando-os acessíveis apenas a usuários autorizados via cliente Cloudflare WARP.
+
+---
+
+**Conclusão:**
+
+O SSH é uma ferramenta essencial para quem precisa de segurança digital em projetos online. Ele combina proteção robusta com eficiência, sendo amplamente utilizado para administração de servidores, transferência segura de arquivos e proteção de informações críticas.
+
+
