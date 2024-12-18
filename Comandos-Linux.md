@@ -287,6 +287,191 @@ Os **atalhos de teclado** utilizando as teclas **Ctrl** + **Alt** são comumente
   
 ---
 
+
+## **Os principais **comandos de permissões** no Linux (Debian/Ubuntu)**
+
+### **1. Comandos para Modificar Permissões de Arquivos**
+
+#### **`chmod` - Modificar Permissões**
+
+O comando **`chmod`** (change mode) altera as permissões de leitura, escrita e execução de arquivos e diretórios.
+
+##### Sintaxe:
+```bash
+chmod [opções] [permissões] [arquivo/diretório]
+```
+
+##### Exemplos:
+- **Permissões em formato simbólico**:
+  - `chmod u+x arquivo.txt` – Adiciona permissão de execução ao **usuário** (dono do arquivo) no arquivo `arquivo.txt`.
+  - `chmod g-w arquivo.txt` – Remove permissão de escrita ao **grupo** no arquivo `arquivo.txt`.
+  - `chmod o+r arquivo.txt` – Adiciona permissão de leitura a **outros** (usuários que não são o dono nem estão no grupo).
+  - `chmod a=r arquivo.txt` – Atribui permissão **somente de leitura** a todos (usuário, grupo e outros).
+
+- **Permissões em formato numérico (octal)**:
+  - `chmod 755 arquivo.txt` – Permite leitura, escrita e execução ao **usuário**, e leitura e execução ao **grupo** e **outros**.
+  - `chmod 644 arquivo.txt` – Permite leitura e escrita ao **usuário** e apenas leitura ao **grupo** e **outros**.
+  - `chmod 777 arquivo.txt` – Permite leitura, escrita e execução a **todos** (usuário, grupo e outros). **(Perigoso para segurança!)**
+
+  | Número | Permissão     | Descrição                     |
+  |--------|---------------|-------------------------------|
+  | `7`    | `rwx` (read, write, execute) | Permissões totais (leitura, escrita, execução) |
+  | `6`    | `rw-`          | Leitura e escrita             |
+  | `5`    | `r-x`          | Leitura e execução            |
+  | `4`    | `r--`          | Somente leitura               |
+  | `3`    | `wx-`          | Escrita e execução            |
+  | `2`    | `w--`          | Somente escrita               |
+  | `1`    | `x--`          | Somente execução              |
+  | `0`    | `---`          | Nenhuma permissão             |
+
+#### **`chown` - Alterar Proprietário e Grupo**
+
+O comando **`chown`** permite alterar o **proprietário** e o **grupo** de um arquivo ou diretório.
+
+##### Sintaxe:
+```bash
+chown [usuário][:grupo] [arquivo/diretório]
+```
+
+##### Exemplos:
+- `chown joao arquivo.txt` – Altera o proprietário de `arquivo.txt` para o usuário **joao**.
+- `chown joao:adm arquivo.txt` – Altera o proprietário para **joao** e o grupo para **adm**.
+- `chown :adm arquivo.txt` – Altera o grupo de `arquivo.txt` para **adm** sem modificar o proprietário.
+- `chown -R joao:adm /diretorio` – Altera recursivamente o proprietário para **joao** e o grupo para **adm** em todos os arquivos e subdiretórios dentro de `/diretorio`.
+
+#### **`chgrp` - Alterar Grupo**
+
+O comando **`chgrp`** altera o **grupo** de um arquivo ou diretório.
+
+##### Sintaxe:
+```bash
+chgrp [grupo] [arquivo/diretório]
+```
+
+##### Exemplos:
+- `chgrp adm arquivo.txt` – Altera o grupo de `arquivo.txt` para **adm**.
+- `chgrp -R adm /diretorio` – Altera recursivamente o grupo de todos os arquivos e subdiretórios dentro de `/diretorio` para **adm**.
+
+---
+
+### **2. Visualizar Permissões de Arquivos**
+
+#### **`ls -l` - Listar Permissões de Arquivos**
+
+O comando **`ls -l`** exibe a lista de arquivos e suas permissões. As permissões são exibidas no início de cada linha, como no exemplo abaixo:
+
+##### Sintaxe:
+```bash
+ls -l [diretório]
+```
+
+##### Exemplo:
+```bash
+ls -l arquivo.txt
+```
+
+**Saída de exemplo**:
+```bash
+-rwxr-xr-- 1 joao adm 1024 dez 18 09:00 arquivo.txt
+```
+
+- **rwxr-xr--**: São as permissões do arquivo.
+  - O primeiro caractere (`-`) indica que é um arquivo regular.
+  - Os três primeiros caracteres (`rwx`) indicam as permissões do **usuário** (proprietário do arquivo).
+  - Os próximos três caracteres (`r-x`) indicam as permissões do **grupo**.
+  - Os três últimos caracteres (`r--`) indicam as permissões de **outros** usuários.
+
+- **1**: Número de links para o arquivo.
+- **joao**: Proprietário do arquivo.
+- **adm**: Grupo associado ao arquivo.
+- **1024**: Tamanho do arquivo em bytes.
+- **dez 18 09:00**: Data e hora da última modificação do arquivo.
+- **arquivo.txt**: Nome do arquivo.
+
+#### **`stat` - Exibir Detalhes de um Arquivo**
+
+O comando **`stat`** fornece informações detalhadas sobre um arquivo, incluindo permissões, proprietário, grupo, tamanho, e a última modificação.
+
+##### Sintaxe:
+```bash
+stat [arquivo/diretório]
+```
+
+##### Exemplo:
+```bash
+stat arquivo.txt
+```
+
+---
+
+### **3. Alterações em Permissões de Diretórios**
+
+Quando você altera as permissões de diretórios, deve lembrar que há diferenças entre os arquivos e diretórios. Para **executar** ou **acessar** um diretório, a permissão de execução (`x`) é necessária. Sem ela, você não poderá entrar no diretório.
+
+- **Adicionar permissão de execução** para permitir o acesso ao diretório:
+  - `chmod +x meu_diretorio` – Permite a execução do diretório.
+  
+- **Permissões recursivas**:
+  - `chmod -R 755 /meu_diretorio` – Aplica permissões de leitura, escrita e execução para o proprietário, e leitura e execução para o grupo e outros, em todos os arquivos e subdiretórios dentro de `/meu_diretorio`.
+
+---
+
+### **4. Permissões Avançadas (ACL - Access Control Lists)**
+
+As **ACLs** oferecem uma maneira mais detalhada de controlar as permissões de arquivos, permitindo a definição de permissões por usuário ou grupo adicional.
+
+#### **`setfacl` - Definir ACLs**
+
+Este comando permite modificar ou configurar ACLs de um arquivo ou diretório.
+
+##### Sintaxe:
+```bash
+setfacl -m u:[usuário]:[permissões] [arquivo/diretório]
+```
+
+##### Exemplos:
+- `setfacl -m u:joao:rwx arquivo.txt` – Dá permissão total (rwx) ao usuário **joao** no arquivo `arquivo.txt`.
+- `setfacl -m g:adm:rx arquivo.txt` – Dá permissão de leitura e execução (rx) ao grupo **adm** no arquivo `arquivo.txt`.
+
+#### **`getfacl` - Verificar ACLs**
+
+Este comando permite exibir as ACLs configuradas para arquivos ou diretórios.
+
+##### Sintaxe:
+```bash
+getfacl [arquivo/diretório]
+```
+
+##### Exemplo:
+```bash
+getfacl arquivo.txt
+```
+
+---
+
+### **5. Permissões de Sudo**
+
+As permissões de **sudo** determinam quais comandos um usuário pode executar com privilégios administrativos.
+
+- **Editar o arquivo de configuração do sudo**:
+  - `sudo visudo` – Edita o arquivo de configuração `/etc/sudoers`, onde as permissões de sudo são definidas.
+  
+Exemplo de configuração no arquivo `/etc/sudoers`:
+```bash
+joao ALL=(ALL:ALL) ALL
+```
+Isso concede a **joao** permissões para executar qualquer comando como qualquer usuário em qualquer host.
+
+---
+
+### **6. Permissões de Sudo e Polkit (PolicyKit)**
+
+No Linux, o **PolicyKit (polkit)** é utilizado para definir permissões administrativas em nível de aplicativos. Ele é usado principalmente em ambientes gráficos para garantir que apenas usuários autorizados possam realizar ações sensíveis, como montar discos ou alterar configurações do sistema.
+
+---
+
+Esses comandos são essenciais para a **administração de permissões** no Linux, garantindo segurança e controle sobre quem pode acessar, modificar e executar arquivos e diretórios no sistema.
+
 ![Captura de Tela (1)](https://github.com/user-attachments/assets/a772e932-e70d-40d5-882b-40a35eab9be6)
 
 
