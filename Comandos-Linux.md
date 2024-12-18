@@ -287,5 +287,9 @@ Os **atalhos de teclado** utilizando as teclas **Ctrl** + **Alt** são comumente
   
 ---
 
+![Captura de Tela (1)](https://github.com/user-attachments/assets/a772e932-e70d-40d5-882b-40a35eab9be6)
+
+
+![Captura de Tela (3)](https://github.com/user-attachments/assets/b170a05e-caa8-4a0b-b977-51e22eb7a68c)
 
 
