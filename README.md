@@ -368,15 +368,13 @@ Embora o ICMP seja um protocolo útil para a operação das redes, ele também p
 
 Esses ataques são muitas vezes amplificados através de redes de dispositivos comprometidos, conhecidas como botnets, o que torna mais difícil sua mitigação e amplia seu impacto. A capacidade do ICMP de gerar grandes volumes de tráfego com pouca sobrecarga para o atacante torna-o uma ferramenta poderosa para esse tipo de ataque.
 
+![Captura de Tela (5)](https://github.com/user-attachments/assets/8c08f18a-6979-442b-853f-c1cb394c28ef)
+
+![Captura de Tela (7)](https://github.com/user-attachments/assets/152f92aa-58df-45c5-9db5-c830fcbcc7fa)
+
 ### Conclusão
 
 O Protocolo de Mensagens de Controle da Internet (ICMP) é fundamental para o gerenciamento e diagnóstico de redes IP. Embora desempenhe um papel crucial na operação da rede, também pode ser alvo de abusos em ataques DDoS. Compreender seu funcionamento, suas mensagens e aplicações práticas é essencial para a administração de redes e para a proteção contra ameaças à segurança. Ao mesmo tempo, o ICMP é uma ferramenta poderosa para garantir que a infraestrutura de rede funcione de maneira eficiente e confiável, tornando-o um pilar fundamental do mundo digital moderno.
-
----
-
-Você está absolutamente certo! A seção sobre **os melhores provedores de certificados SSL** é uma parte fundamental para aqueles que estão buscando entender melhor as opções disponíveis no mercado e como elas podem atender às necessidades de segurança de seus sites.
-
-Aqui está o texto revisado e atualizado, incluindo o tópico que você mencionou, detalhando as principais opções de provedores de SSL:
 
 ---
 
