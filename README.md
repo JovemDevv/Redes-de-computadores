@@ -2168,3 +2168,4 @@ Assim, o **TCP/IP** interage com todos esses protocolos e tecnologias para forma
 
 ![diagrama de conexões entre protocolos e Tecnologias de Rede](https://github.com/user-attachments/assets/706b7b4d-b4cd-4856-b2dd-02d1bdb4c20d)
 
+![Captura de Tela (4)](https://github.com/user-attachments/assets/5167db8d-599b-4292-8dd5-9b3e2fff0254)
