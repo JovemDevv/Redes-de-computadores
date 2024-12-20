@@ -1,4 +1,40 @@
 # **Redes de Computadores**  
+## **Índice:**
+
+1. TCP/IP  
+2. FTP  
+3. SSH  
+4. TELNET  
+5. SMTP  
+6. ICMP  
+7. SSL  
+8. DNS  
+9. MPLS  
+10. OSPF  
+11. BGP  
+12. Spanning Tree Protocol  
+13. VLAN  
+14. CDN  
+15. PTT  
+16. PNI  
+17. P2P  
+18. LACP  
+19. Porta Fast Ethernet  
+20. Porta Gigabit Ethernet  
+21. Transceiver  
+22. Roteador  
+23. Rede LAN e WAN  
+24. Rede Wireless  
+25. Frequências de Rede Wireless  
+26. ASN  
+27. IPv4  
+28. IPv6  
+29. Login PPPoE  
+30. MAC Address  
+31. DHCP  
+32. NAT  
+33. CGNAT  
+
 ## **Modelo TCP/IP**
 
 O **modelo TCP/IP** é fundamental para o funcionamento da Internet, gerenciando as transferências de dados entre dispositivos conectados à rede. Esse modelo é uma pilha de protocolos, composta por quatro camadas principais: **camada de aplicação**, **camada de transporte**, **camada de rede** e **camada de interface**.
@@ -2065,3 +2101,67 @@ Se você estiver enfrentando problemas com o CGNAT, a recomendação é entrar e
 
 ### **Conclusão:**
 O CGNAT, como uma solução temporária para o esgotamento dos endereços IPv4, tem suas vantagens, principalmente no curto prazo, pois permite que os provedores utilizem os endereços disponíveis de maneira mais eficiente. No entanto, ele também apresenta desvantagens significativas, principalmente em termos de segurança, performance e comprometimento com a evolução para o **IPv6**.
+
+Aqui está o texto completo com as informações atualizadas e a inclusão de todos os protocolos e tecnologias:
+
+---
+
+## **Diagrama de Conexões entre Protocolos e Tecnologias de Rede**
+
+1. **Camada TCP/IP (Base de Tudo)**  
+   - TCP/IP é o alicerce de todas as comunicações. Ele serve como base para todos os protocolos de comunicação e tecnologias de rede.
+   - Conecta-se a: FTP, SMTP, SSH, TELNET, HTTP, HTTPS, DNS, ICMP, OSPF, BGP, MPLS, SSL/TLS, VLAN, LACP, PPPoE, IPv4, IPv6, NAT, CGNAT, CDN, PTT, PNI, Transceiver, DHCP, MAC Address, Rede LAN e WAN, Rede Wireless, Frequências de Rede Wireless, ASN, e Spanning Tree Protocol.
+
+2. **Protocolos de Comunicação**  
+   - **DNS** → Tradução de nomes de domínio para IPs (usado por TCP/IP para navegação na web).
+   - **FTP, SMTP, SSH, TELNET** → Protocolos de aplicação que rodam sobre TCP/IP para transferências de arquivos, envio de e-mails e acesso remoto a sistemas.
+   - **ICMP** → Usado para diagnósticos de rede, como o comando **ping**, sobre TCP/IP.
+   - **SSL/TLS** → Criptografa os dados enviados sobre TCP/IP (como em HTTPS), garantindo a segurança da comunicação.
+   - **MPLS** → Trabalha sobre TCP/IP para otimizar o roteamento e melhorar o desempenho de redes.
+   - **BGP** e **OSPF** → Protocolos de roteamento que determinam os melhores caminhos para o tráfego entre redes, ambos baseados em TCP/IP.
+
+3. **Redes e Segmentação**  
+   - **VLAN** → Segmentação lógica de rede que funciona sobre TCP/IP para dividir redes locais em sub-redes, garantindo melhor organização e segurança.
+   - **LACP** → Controla a agregação de links físicos para melhorar a largura de banda entre dispositivos em TCP/IP.
+   - **Spanning Tree Protocol (STP)** → Previne loops de rede, especialmente em redes com múltiplas VLANs e switches, garantindo que o tráfego flua sem interrupções.
+
+4. **Endereçamento e Identificação**  
+   - **MAC Address** → Identificação única de dispositivos na camada de enlace de dados, usada para a comunicação em nível físico.
+   - **IPv4** e **IPv6** → Protocolos de endereçamento IP usados para identificar dispositivos na rede. O IPv6 foi criado para superar a limitação do IPv4, que tem um número limitado de endereços.
+
+5. **Conectividade e Acesso à Internet**  
+   - **NAT** → Tradução de endereços IP privados para públicos, essencial para o acesso à Internet em redes internas.
+   - **CGNAT** → Uma versão do NAT, usada por provedores de Internet para compartilhar um único endereço IP público entre vários clientes, geralmente para usuários domésticos.
+   - **PPPoE** → Protocolo de autenticação usado para conexões de banda larga sobre TCP/IP, comum em conexões DSL.
+
+6. **Segurança**  
+   - **SSL/TLS** → Protocólo de segurança que criptografa a comunicação, garantindo a segurança da troca de dados, especialmente em navegação na web (resultando em HTTPS).
+
+7. **Tecnologias Avançadas**  
+   - **P2P** → Comunicação direta entre dispositivos, sem a necessidade de um servidor central, utilizando TCP/IP para a troca de dados.
+   - **CDN** → Redes de entrega de conteúdo que otimizam a distribuição de dados, usando a infraestrutura de rede para acelerar o acesso ao conteúdo. Conecta-se a **TCP/IP** e **Roteadores** para garantir alta disponibilidade e desempenho.
+
+8. **Tecnologias de Conexão e Acesso**  
+   - **Transceiver** → Dispositivo que permite a conversão entre diferentes tipos de sinal, como fibra ótica e cobre, conectado às **Portas Fast Ethernet** e **Portas Gigabit Ethernet**, além de ser utilizado em **Roteadores** para garantir a conectividade.
+   - **DHCP** → Protocólo de configuração dinâmica de endereços IP. Conecta-se a **TCP/IP**, **Roteadores** e gerencia a atribuição de **IPv4** e **IPv6**.
+
+9. **Tecnologias de Rede Local e WAN**  
+   - **Roteador** → Dispositivo fundamental para o roteamento de pacotes entre redes LAN e WAN. Ele utiliza **TCP/IP** para encaminhar tráfego e se conecta a diversos protocolos como **MPLS**, **DNS**, **IPv4**, **IPv6**, **NAT** e **CGNAT** para gerenciar a conectividade entre redes internas e externas.
+   - **Rede LAN e WAN** → Redes locais (LAN) e redes de longa distância (WAN), onde o **Roteador** conecta essas redes utilizando protocolos de roteamento como **BGP**, **OSPF**, e **MPLS**.
+
+10. **Tecnologias de Conexão Especializadas**  
+   - **PNI** (Ponto de Troca de Tráfego) → Conexões diretas entre redes de diferentes ISPs para melhorar a troca de tráfego, com base em **TCP/IP** e **MPLS**.
+   - **PTT** (Ponto de Presença de Tráfego) → Ponto físico onde os provedores de internet trocam tráfego, também utilizando **TCP/IP** e se conectando a **Roteadores** e **VLAN** para gerenciamento e otimização do tráfego.
+
+---
+
+### Fluxo de Conexões:
+
+- **TCP/IP** é a espinha dorsal de todas as comunicações. A partir de **TCP/IP**, diversos protocolos e tecnologias garantem a comunicação eficiente entre dispositivos e redes.
+  - Por exemplo, ao acessar um site, o **DNS** traduz o nome do domínio para um IP, que é usado pelo protocolo **TCP/IP** para estabelecer a conexão.
+  - Em uma **VLAN**, o tráfego é isolado logicamente para otimizar a rede, enquanto o **Spanning Tree Protocol (STP)** garante que não haja loops.
+  - **MPLS** é utilizado para otimizar os caminhos dos pacotes, e **SSL/TLS** criptografa os dados para garantir a segurança.
+  - **NAT** e **CGNAT** são usados para permitir o acesso à internet a partir de redes internas, especialmente quando o **PPPoE** é utilizado para autenticar a conexão de banda larga.
+  - **P2P** permite comunicação direta entre dispositivos, sem depender de servidores centrais, sendo facilitada por **TCP/IP**.
+
+Assim, o **TCP/IP** interage com todos esses protocolos e tecnologias para formar uma rede de comunicações robusta e eficiente, capaz de atender às necessidades de conectividade, segurança, segmentação e gestão de tráfego em redes modernas.
