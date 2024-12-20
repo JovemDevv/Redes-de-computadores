@@ -2165,3 +2165,6 @@ Aqui está o texto completo com as informações atualizadas e a inclusão de to
   - **P2P** permite comunicação direta entre dispositivos, sem depender de servidores centrais, sendo facilitada por **TCP/IP**.
 
 Assim, o **TCP/IP** interage com todos esses protocolos e tecnologias para formar uma rede de comunicações robusta e eficiente, capaz de atender às necessidades de conectividade, segurança, segmentação e gestão de tráfego em redes modernas.
+
+![diagrama de conexões entre protocolos e Tecnologias de Rede](https://github.com/user-attachments/assets/706b7b4d-b4cd-4856-b2dd-02d1bdb4c20d)
+
